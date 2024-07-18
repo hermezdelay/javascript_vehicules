@@ -1,4 +1,4 @@
-Installation:
+<b>Installation:</b>
 
 Après avoir cloné le repo vous avez plusieurs options pour lancer le projet.
 
