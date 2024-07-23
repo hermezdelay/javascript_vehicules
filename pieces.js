@@ -138,13 +138,10 @@ document.querySelector('.disponibles').appendChild(pElementDisponible).appendChi
 const boutonRange = document.querySelector("#btn-range");
 
 boutonRange.addEventListener("input", function () {
+
     document.querySelector(".fiches").innerHTML = "";
     const piecesFiltrees = pieces.filter(function (piece) {
-        alert(boutonRange.value);
-        console.log(piece.prix <= boutonRange.nodeValue);
         return piece.prix <= boutonRange.value;
-
-    //genererPieces(piecesFiltrees);
     });
     document.querySelector(".fiches").innerHTML = "";
     genererPieces(piecesFiltrees);
