@@ -7,7 +7,7 @@ Si vous utiliser VSCode ou un autre éditeur de code avec une extersion de serve
 Dans le cas contraire vous pouvez installer les dépendances de ce projet avec npm install puis lancer le projet via la commande npm start. Vous verrez dans le termninal le lien vers le site (par defaut http://127.0.0.1:8080 )
 
 
-<b>Hebergement du serveur JSON dans son application</b>
+<b>Hebergement du serveur API en JSON dans son application et fair un appel pour le test via la methone fetch()</b>
 git clone https://github.com/OpenClassrooms-Student-Center/7697016-Back-End.git api-http 
 cd api-http 
 npm install 
