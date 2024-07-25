@@ -9,6 +9,6 @@ Dans le cas contraire vous pouvez installer les dépendances de ce projet avec n
 
 <b>Hebergement du serveur API en JSON dans son application et fair un appel pour le test via la methone fetch()</b>
 git clone https://github.com/OpenClassrooms-Student-Center/7697016-Back-End.git api-http 
-cd api-http 
+cd api-http/Back-End
 npm install 
 npm start
