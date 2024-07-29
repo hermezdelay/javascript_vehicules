@@ -1,8 +1,15 @@
 import { ajoutListenersAvis, ajoutListenerEnvoyerAvis } from "./avis.js";
 
-// Récupération des pièces depuis le fichier JSON
-const reponse = await fetch('http://localhost:8081/pieces');
-const pieces = await reponse.json();
+let pieces = window.localStorage.getItem('pieces');
+
+if(pieces === null){
+    // Récupération des pièces depuis le fichier JSON
+    const reponse = await fetch('http://localhost:8081/pieces');
+    pieces = await reponse.json();
+    const valeurPieces = JSON.stringify(pieces);
+
+    window.localStorage.setItem("pieces", valeurPieces);
+}
 
 
 ajoutListenerEnvoyerAvis();

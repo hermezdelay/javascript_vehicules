@@ -26,30 +26,30 @@ export function ajoutListenersAvis() {
            /* ... */
       });
     }
-};
+}
 
 export function ajoutListenerEnvoyerAvis(){
     const ListenerEnvoyerAvis = document.querySelector(".formulaire-avis");
-    ListenerEnvoyerAvis.addEventListener("submit", async function(event){
+    ListenerEnvoyerAvis.addEventListener("submit", function(event){
             
         // On empêche le comportement par défaut
-        event.preventDefault();
-        alert("coucou = " + event.target.querySelector("[name=piece-id]").value);
-        const avis = {
-            pieceId : parseInt(event.target.querySelector("[name=piece-id]").value),
-            utilisateur: event.target.querySelector("[name=utilisateur]").value,
-            commentaire: event.target.querySelector("[name=commentaire]").value            
-        };
+    event.preventDefault();
+    const avis = {
+        pieceId : parseInt(event.target.querySelector("[name=piece-id]").value),
+        utilisateur: event.target.querySelector("[name=utilisateur]").value,
+        commentaire: event.target.querySelector("[name=commentaire]").value,  
+        nbEtoiles: event.target.querySelector("[name=nbEtoiles]").value,           
+    };
         // Création de la charge utile au format JSON
-        const chargeUtile = JSON.stringify(avis);
+    const chargeUtile = JSON.stringify(avis);
         
-        fetch(`http://localhost:8081/avis`,{
+    fetch("http://localhost:8081/avis",{
               /* Objet de configuration */
-            method: "POST",
-            header : { "Content-Type": "application/json" },
-            body : chargeUtile
+        method: "POST",
+        headers : { "Content-Type": "application/json" },
+        body : chargeUtile
 
-        });
+    });
 
 
     });
